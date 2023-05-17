@@ -1,0 +1,28 @@
+﻿.support-costumer {
+    padding-top: 70px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: rgb(198 175 29);
+    font-size: 30px;
+}
+
+.container-Infor{
+    color: #333;
+    font-family: Open Sans,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    box-sizing: border-box;
+    background: #d6d6d6;
+    border-radius: 2px;
+    float: left;
+    padding: 10px;
+    min-height: 260px;
+    width: 780px;
+    margin-top: 20px;
+}
+
+.para {
+    position: relative;
+    left: 25%;
+    right: 25%;
+}

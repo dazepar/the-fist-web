@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebDemo.Models.PHIM>
+
+@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="FilmhotPage general">
+
+    <div>
+        @Html.Action("LayTheLoai", "PHIMs")
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <h2 style="font-size:20px;color:red;text-align:center;margin: 10px 0;">Có @Model.Count() kết quả phù hợp</h2>
+    }
+    else
+    {
+        <h2 style="font-size: 20px; color: red; text-align: center; margin: 10px 0;">Không có kết quả phù hợp</h2>
+    }
+    <div class="box">
+        @foreach (var phim in Model)
+        {
+            <a href="@Url.Action("Details", "PHIMs", new { id = phim.MaPhim})" class="link">
+                <img class="item-thumnail-film"
+                     src="~/Images/@phim.HinhMinhHoa" alt="Card image">
+                <div class="item-description">
+                    <h4 class="item-description-title">@phim.TenPhim</h4>
+                    <p class="item-description-price">@phim.DonGia VND</p>
+                </div>
+            </a>
+        }
+    </div>
+
+</div>
+
+
+

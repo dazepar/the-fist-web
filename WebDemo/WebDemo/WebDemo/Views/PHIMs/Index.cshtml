@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebDemo.Models.PHIM>
+
+@{
+    ViewBag.Title = "FilmHotPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="FilmhotPage general">
+    Film Hot
+    <div>
+        @Html.Action("LayTheLoai", "PHIMs")
+    </div>
+    <div class="box">
+        @foreach (var phim in Model)
+        {
+            <a href="@Url.Action("Details", "PHIMs", new { id = phim.MaPhim})" class="link">
+                <img class="item-thumnail-film"
+                     src="~/Images/@phim.HinhMinhHoa" alt="Card image">
+                <div class="item-description">
+                    <h4 class="item-description-title">@phim.TenPhim</h4>
+                    <p class="item-description-price">@phim.DonGia VND</p>
+                </div>
+            </a>
+        }
+    </div>
+</div>
+
+

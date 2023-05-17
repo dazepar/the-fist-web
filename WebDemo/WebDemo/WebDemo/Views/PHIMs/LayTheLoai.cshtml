@@ -1,0 +1,12 @@
+﻿@using WebDemo.Models
+@model IEnumerable<THELOAI>
+<div class="category">THỂ LOẠI PHIM</div>
+<ul class="box">
+    @foreach (var chude in Model)
+    {
+        <a href="@Url.Action("SPTheoTheLoai", "PHIMs", new { id=chude.MaTL })"
+           class="items_category link">
+            @chude.TenTL
+        </a>
+    }
+</ul>

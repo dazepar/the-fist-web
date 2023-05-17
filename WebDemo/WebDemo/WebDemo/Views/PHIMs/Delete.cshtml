@@ -1,0 +1,63 @@
+﻿@model WebDemo.Models.PHIM
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="admin general">XÓA SẢN PHẨM </div>
+<h3 style="text-align: center; margin-left: 140px;">Bạn có chắn chắn muốn xóa ?</h3>
+<div class="form-horizontal">
+    @using (Html.BeginForm())
+    {
+        <h4 style="margin: 5px 0">Sản phẩm</h4>
+        <dl class="dl-horizontal">
+            <dt style="margin: 5px 0; color:red;">
+                Tên phim
+            </dt>
+
+            <dd style="margin: 5px 0">
+                @Html.DisplayFor(model => model.TenPhim)
+            </dd>
+
+            <dt style="margin: 5px 0; color:red;">
+                Giá
+            </dt>
+
+            <dd style="margin: 5px 0">
+                @Html.DisplayFor(model => model.DonGia)
+            </dd>
+
+            <dt style="margin: 5px 0; color:red;">
+                Mô tả
+            </dt>
+
+            <dd style="margin: 5px 0">
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+            <dt style="margin: 5px 0; color:red;">
+                Hình minh họa
+            </dt>
+
+            <dd style="margin: 5px 0">
+               <img src="~/Images/@Model.HinhMinhHoa" />
+            </dd>
+
+            <dt style="margin: 5px 0; color:red;">
+                Thể loại
+            </dt>
+
+            <dd >
+                @Html.DisplayFor(model => model.THELOAI.TenTL)
+            </dd>
+
+        </dl>
+
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn-small btn-default" /> 
+        </div>
+        <div class="btn-small">@Html.ActionLink("Trở về", "Index","Admin")</div>
+    }
+</div>

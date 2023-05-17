@@ -1,0 +1,33 @@
+﻿@using WebDemo.Models
+@{
+    KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+}
+@if (kh == null)
+{
+    <div id="user">
+        <div>
+            <a><i class="fa fa-user" aria-hidden="true"></i></a>
+            <ul class="items-list-user">
+                <li class="items">
+                    <a href="@Url.Action("DangKy","KHACHHANGs")" class="link">Đăng ký</a>
+                </li>
+                <li class="items">
+                    <a href="@Url.Action("DangNhap","KHACHHANGs")" class="link">Đăng nhập</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <span style="color: black; font-weight: bold">
+        Username: @kh.HoTenKH
+    </span>
+        <a href="@Url.Action("DangXuat","KHACHHANGs")"><i class="fa fa-sign-out" aria-hidden="true" style="color: #00ff00; 
+font-size: 15px; margin-right: 20px"></i></a>
+
+}
+
+<a href="@Url.Action("HienThiGioHang", "GioHang")" style="text-decoration: none; color: #00ff00; font-weight: bold">
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng (@ViewBag.TongSL)
+</a>

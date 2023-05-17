@@ -1,0 +1,55 @@
+﻿.FilmhotPage {
+    padding-top: 70px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: rgb(198 175 29);
+    font-size: 30px;
+}
+.box {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.item-thumnail-film {
+    width: 400px;
+    height: 440px;
+    display: inline;
+    margin-left: 20px;
+    padding: 10px 0 0 0;
+}
+
+.item-description {
+    margin: 0px 0px -40px 20px;
+    padding: 0px 0 50px 0px;
+    text-align: center;
+}   
+
+.item-description-price {
+    font-size: 16px;
+    padding-top: 5px;
+}
+.item-description_detail {
+  
+    width: 420px;
+    display: inline-block;
+}
+.item-thumnail-film-img {
+    width: 400px;
+    height: 440px;
+    display: inline;
+    margin-left: 20px;
+    padding: 10px 0 0 0;
+}
+.price{
+    margin: 20px 0 0 0 ;
+}
+.category {
+  //  margin-left: 100px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.items_category {
+    font-size: 16px;
+    margin-left: 30px;
+}

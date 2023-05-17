@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e662a20ff9be41708b8088d27a94008e" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAnWebModel.CTDONHANG" Width="1.5" PointX="6.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.DAODIEN" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.DONDATHANG" Width="1.5" PointX="10.125" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.KHACHHANG" Width="1.5" PointX="8.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.PHIM" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.THELOAI" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.VIETPHIM" Width="1.5" PointX="4.875" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="DoAnWebModel.FK_CTDONHANG_DONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnWebModel.FK_CTDONHANG_PHIM" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnWebModel.FK_VIETPHIM_DAODIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnWebModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnWebModel.FK_PHIM_THELOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnWebModel.FK_VIETPHIM_PHIM" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DoAnWebModel.AdminUser" Width="1.5" PointX="5" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

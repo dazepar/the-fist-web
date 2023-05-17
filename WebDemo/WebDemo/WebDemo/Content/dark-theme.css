@@ -1,0 +1,18 @@
+﻿body {
+    color: #222;
+    background: #fff;
+}
+
+a {
+    color: #d1e300;
+}
+
+/* Dark Mode styles */
+body.dark-theme {
+    color: #989898;
+    background: rgb(30, 30, 30);
+}
+
+    body.dark-theme a {
+        color: #9d9d9d;
+    }

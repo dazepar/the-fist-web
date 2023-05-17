@@ -1,0 +1,27 @@
+﻿.news-title-page {
+    float: left;
+    width: 1000px;
+    margin-left: 235px;
+    margin-bottom: 50px;
+}
+
+.news-content {
+    font-family: Open Sans,sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    line-height: 25px;
+    clear: both;
+    margin-left: 235px;
+    width: 1000px;
+}
+
+.item-description-news {
+    padding: 10px 0px 20px 45px;
+}
+
+.item-thumnail-new-img {
+    height: 400px;
+    width: 650px;
+    padding-bottom: 20px;
+}

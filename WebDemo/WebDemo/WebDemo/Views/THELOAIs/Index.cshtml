@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebDemo.Models.THELOAI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin general" >THÔNG TIN THỂ LOẠI</div>
+<p class="btn-small"style="margin-bottom:10px;">
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<p class="btn-small" style="margin-bottom:10px;">
+    @Html.ActionLink("Trở về", "Index","Admin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Thể Loại
+        </th>
+        <th>
+            Sửa / Xóa
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTL)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTL }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTL })
+            </td>
+        </tr>
+    }
+</table>

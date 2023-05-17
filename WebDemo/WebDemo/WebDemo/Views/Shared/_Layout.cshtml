@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/Images/Logo1.png" />
+    <title>@ViewBag.Title - BestCinema</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+  
+</head>
+<body class="light-theme">
+    <div id="main">
+        <div id="header">
+            <ul id="nav">
+                <a href="@Url.Action("Index","Home")"><img src="~/Images/Logo.png" alt="vuighelogo" class="logo"></a>
+                <li><a href="@Url.Action("Index","PHIMs")">Film Hot</a></li>
+                <li><a href="@Url.Action("Index","TinTuc")">Tin Tức</a></li>
+                <li>
+                    <a href="@Url.Action("ThongTinWeb","Home")">Thông Tin Web</a>
+                </li>
+            </ul>
+
+            <div class="search">
+                <input id="search" onkeypress="return runScript(event)" name="search" type="text" placeholder="Tim kiếm ..." />
+
+                <button id="btnSearch" style=" border: 0px; font-size: 17px;cursor: pointer;border:0px;"><i class="fa fa-search icon" aria-hidden="true"></i></button>
+
+            </div>
+
+            <div id="user-theme">
+                <i class="fa fa-sun-o btn-toggle" aria-hidden="true" onclick="changeTheme()"></i>
+            </div>
+            <div class="cart">
+                @Html.Action("GioHangPartial", "GioHang")
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+            <footer>
+            </footer>
+        </div>
+    </div>
+    <script>
+
+        let btnSearch = document.getElementById("btnSearch")
+        btnSearch.addEventListener('click', () => {
+
+            let keyword = document.getElementById("search").value;
+
+            if (keyword && keyword.trim() != "") {
+                window.location = `/search/index?keyword=${keyword}`
+            }
+        })
+        function runScript(e) {
+
+            if (e.keyCode == 13) {//KEYCODE ENTER = 13
+                let keyword = document.getElementById("search").value;
+
+                if (keyword && keyword.trim() != "") {
+                    window.location = `/search/index?keyword=${keyword}`
+                }
+            }
+        }
+    </script>
+    @Scripts.Render("~/Scripts/changeTheme.js")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

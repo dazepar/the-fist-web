@@ -1,0 +1,29 @@
+﻿@model WebDemo.Models.PHIM
+@{
+    ViewBag.Title = "Chi Tiết Phim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="FilmhotPage general">
+    THÔNG TIN VỀ PHIM
+</div>
+<div class="box">
+    <div >
+        <img class="item-thumnail-film-img" , src="~/Images/@Model.HinhMinhHoa" />
+    </div>
+    <div class="item-description_detail">
+        <h3 style="text-align:center">Tên Phim: @Model.TenPhim</h3>
+        <p style="text-align: justify">
+            <span style="font-weight: bold">Mô tả:</span> @Model.MoTa
+        </p>
+        <p class="price">
+            Giá bán: <span style="color:red; font-size:32px;">@Model.DonGia VNĐ</span>
+        </p>
+        <a class="btn btn-primary" href="@Url.Action("ThemSanPhamVaoGio", "GioHang", new{ MaSP = Model.MaPhim })">
+            Thêm vào giỏ hàng
+        </a>
+        <a class="btn btn-primary" href="@Url.Action("Index", "PHIMs", new{ MaSP = Model.MaPhim })">
+            Quay về
+        </a>
+    </div>
+</div>

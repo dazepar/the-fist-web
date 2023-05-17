@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebDemo.Models.PHIM>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container">
+    <!-- Home -->
+    <div class="slideshow-container">
+        <div class="title-home black">
+            BEST CINEMA <BR /> Nơi mua phim giá rẻ
+        </div>
+        <div class="mySlides fade img">
+            <img src="~/Images/chu-thuat-5.jpg" style="width: 100%;height: 700px;">
+        </div>
+        <div class="mySlides fade img">
+            <img src="~/Images/052d9f0b3d369532815cb8b629d67fbd.jpg" style="width: 100%;height: 700px;">
+        </div>
+
+        <div class="mySlides fade img">
+            <img src="~/Images/one-piece-film-red-4.jpg" style="width: 100%;height: 700px;">
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+    <!-- Phim Hot -->
+    <div class="Filmhot general">
+        <a href="@Url.Action("Index","PHIMs")" class="link">
+        <h2 class="content-heading" id="text">Film Hot <i class="fa fa-angle-right" aria-hidden="true"></i></h2></a>
+        @foreach (var phim in Model)
+        {
+            if (phim.MaPhim <=6)
+            {
+                <a href="@Url.Action("Details", "PHIMs", new { id = phim.MaPhim})" class="link">
+                    <img class="item-thumnail"
+                         src="~/Images/@phim.HinhMinhHoa" alt="Card image">
+                </a>
+            }
+        }
+    </div>
+    <!--Tin Tức -->
+    <div class="News general">
+        <a href="@Url.Action("Index","TinTuc")" class="link">
+        <h2 id="TinTuc" class="content-heading">Tin Tức <i class="fa fa-angle-right" aria-hidden="true"></i></h2></a>
+        <div class="box">
+            <a href="@Url.Action("New1","TinTuc")" class="link">
+                <div class="news-item">
+                    <img src="https://s199.imacdn.com/ta/2022/10/22/02ff2c05f20a9bf0_c68117e1b71069e3_5800316663745199185710.jpg" 
+                         alt="" class="news-item-thumnail">
+                    <div class="news-title">
+                        Nhờ sự trỗi dậy của trí tuệ nhân tạo,Nhật Bản có thể<br />tạm thời bỏ "che" các hạng mục 18+!
+                    </div>
+                </div>
+            </a>
+            <a href="@Url.Action("New2","TinTuc")" class="link">
+                <div class="news-item">
+                    <img src="https://s199.imacdn.com/ta/2022/10/22/cee9d65c2aa76683_d37af50c47c67373_13273716663726505185710.jpg" 
+                         alt="" class="news-item-thumnail">
+                    <div class="news-title">
+                        Kết thúc arc thứ hai,Fumetsu no Anata e sẵn sàng<br /> mở màn arc thứ 3!
+                    </div>
+                </div>
+            </a>
+            <a href="@Url.Action("New3","TinTuc")" class="link">
+                <div class="news-item">
+                    <img src="https://s199.imacdn.com/ta/2022/10/22/233478ed6d23d428_0117b3a896cbee1e_9067516663741182185710.jpg" 
+                         alt="" class="news-item-thumnail">
+                    <div class="news-title ">
+                        Mùa hai của bộ anime Cyberpunk: Edgerunners<br />sẽ không được sản xuất!
+                    </div>
+                </div>
+            </a>
+            <a href="@Url.Action("New4","TinTuc")" class="link">
+                <div class="news-item">
+                    <img src="https://www.animegeek.com/wp-content/uploads/2022/10/SpyClassroomheader.jpg" 
+                         alt="" class="news-item-thumnail">
+                    <div class="news-title">
+                        Anime Spy Kyoushitsu hé lộ về nhân vật Grete
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
